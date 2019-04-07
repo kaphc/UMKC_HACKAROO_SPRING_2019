@@ -1,0 +1,7 @@
+{
+  "name": "CrossTrack",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
