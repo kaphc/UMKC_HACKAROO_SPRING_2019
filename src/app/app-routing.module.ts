@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'receipt-upload', loadChildren: './receipt-upload/receipt-upload.module#ReceiptUploadPageModule' },
+  { path: 'receipt-camera', loadChildren: './receipt-camera/receipt-camera.module#ReceiptCameraPageModule' },
 ];
 
 @NgModule({

@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild} from '@angular/core';
 import { Http } from '@angular/http'
 import { AngularFirestore } from '@angular/fire/firestore';
 import { UserService } from '../user.service';
 import { firestore } from 'firebase/app';
+import { NavController } from '@ionic/angular';
+import { ReceiptsPage } from '../receipts/receipts.page';
+
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-receipt-upload',
@@ -14,13 +18,24 @@ export class ReceiptUploadPage implements OnInit {
   imageURL: string
   desc: string
 
+  @ViewChild('fileButton') fileButton
+
   constructor(public http: Http,
     public afstore: AngularFirestore,
-    public user: UserService) { }
+    public user: UserService,
+    public nav:NavController,
+    public router: Router) { }
 
   ngOnInit() {
   }
+  async navigateBack(){
+    this.router.navigate(['/tabs'])
+  }
 
+ /* uploadFile() {
+    this.fileButton.nativeElement.click()
+  }*/
+  
   createPost() {
     const image = this.imageURL
     const desc = this.desc
@@ -29,7 +44,7 @@ export class ReceiptUploadPage implements OnInit {
       posts: firestore.FieldValue.arrayUnion({
         image,desc
       })
-    })
+    });
   }
 
   filechanged(event) {

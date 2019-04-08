@@ -5,6 +5,7 @@ import { Router } from '@angular/router'
 import { UserService } from '../user.service'
 
 import { AlertController } from '@ionic/angular'
+import { ActionSheetController } from '@ionic/angular'
 
 @Component({
   selector: 'app-login',
@@ -20,8 +21,13 @@ export class LoginPage implements OnInit {
     public afAuth: AngularFireAuth,
     public alert: AlertController,
     public router: Router,
-    public user: UserService
+    public user: UserService,
+    private actionSheet: ActionSheetController
   ) { }
+
+  async exit(){
+    this.router.navigate(['/home'])
+  }
 
   ngOnInit() {
   }
@@ -52,7 +58,7 @@ export class LoginPage implements OnInit {
       header,
       subHeader: "CrossTrack",
       message,
-      buttons: ['Ok']
+      buttons: ['Ok', 'GoBack']
     });
 
     await alert.present();

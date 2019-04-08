@@ -1,13 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>receipts</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-fab vertical="center" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="addreceipt()">
-          <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>Lidl</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-img src="https://ucarecdn.com/6c704284-71f1-4ee8-a54d-de19b86b3cb0/"></ion-img>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+    <div class="receipts">working2</div>
+  </ion-card>
+  <!-- fab placed to the top end -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button>
+        <ion-icon name="cloud-upload" (click)="addreceipt()"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="camera" (click)="snapreceipt()"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

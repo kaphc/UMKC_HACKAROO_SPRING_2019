@@ -1,5 +1,12 @@
 ion-slides{
     height: 90%;
+    background-color: #21CE99; 
+}
+
+ion-grid{
+    height:10%;
+    background-color: #27A47C; 
+    justify-content: center;
 }
 .diag {
     position: absolute;
@@ -14,10 +21,15 @@ ion-slides{
       font-size:7em;
   }
   
-  h2 {
+  h1 {
       margin-top:80% !important;
       font-weight:bold;
       font-size:1em;
+      color: white
+  }
+  
+  h3{
+    color: white 
   }
   
   p {
@@ -25,14 +37,16 @@ ion-slides{
       display:block;
       margin: 0 auto;
       font-size:.9em;
+      color: white
   }
   
   .swiper-pagination-bullet-active {
-      background:#C400FF;
+      background:white;
   }
   
   .swiper-pagination {
       bottom: 12% !important;
+      background: white;
   }
   
   #skip {

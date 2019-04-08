@@ -18,6 +18,11 @@ export class RegisterPage implements OnInit {
   password: string = ""
   cpassword: string = ""
 
+  async exit(){
+    this.router.navigate(['/home'])
+  }
+
+  
   constructor(
     public afAuth: AngularFireAuth,
     public alert: AlertController,

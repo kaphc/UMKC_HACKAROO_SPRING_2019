@@ -1,20 +1,27 @@
-<ion-header>
-    <ion-title>
-      Ionic Tesseract
-    </ion-title>
+<ion-header padding>
+  <ion-title> File Uploader</ion-title>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" (click)="navigateBack()">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 </ion-header>
- 
-<ion-content padding> 
-  <div class="camera"></div>
 
-  <input type="file" (change)="filechanged($event)" />
 
-  <ion-card *ngIf="imageURL">
-    <img src="https://ucarecdn.com/{{ imageURL }}/" />
-    <ion-card-content>
-        <ion-textarea placeholder="Enter some description" [(ngModel)]="desc"></ion-textarea>
+<ion-content>
+  <div class="center">
+    <ion-card>
+      <ion-card-header>
+        <input type="file" (change)="filechanged($event)" /><br>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-textarea placeholder="Enter some description" [(ngModel)]="desc"></ion-textarea><br>
         <ion-button shape="round" color="primary" (click)="createPost()">POST</ion-button>
-    </ion-card-content>
-  </ion-card>
-  
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 </ion-content>

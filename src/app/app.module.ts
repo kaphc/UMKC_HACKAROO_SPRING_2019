@@ -15,6 +15,8 @@ import { UserService } from './user.service';
 import { HttpModule } from '@angular/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { Camera } from '@ionic-native/camera/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +26,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UserService
+    UserService,
+    Camera
   ],
   bootstrap: [AppComponent]
 })
